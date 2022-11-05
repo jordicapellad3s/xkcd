@@ -1,27 +1,31 @@
-import { Container, Row, Text } from '@nextui-org/react'
 import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className="flex justify-between p-4 max-w-xl m-auto">
+    <header className="flex justify-between max-w-xl p-4 m-auto">
       <div>
-        <span className="text-2xl font-bold">next</span>
-        <span className="font-light text-2xl">xkcd</span>
+        <h1 className="text-2xl font-bold transition hover:opacity-50">
+          <Link href="/">
+            <span>next</span>
+            <span className="font-light">xkcd</span>
+          </Link>
+        </h1>
       </div>
       <nav>
         <ul className="flex flex-row gap-2">
           <li>
-            <Link href="/" className="text-sm font-semibold">
+            <Link
+              href="/"
+              className="text-sm font-semibold transition hover:opacity-50"
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="text-sm font-semibold">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/search" className="text-sm font-semibold">
+            <Link
+              href="/search"
+              className="text-sm font-semibold transition hover:opacity-50"
+            >
               Search
             </Link>
           </li>

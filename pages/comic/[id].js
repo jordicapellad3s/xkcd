@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { readFile, readdir, stat } from 'fs/promises'
 import Link from 'next/link'
 import { basename } from 'path'
+import { Layout } from 'components/Layout'
 
 export default function Comic({
   name,
@@ -22,11 +23,8 @@ export default function Comic({
       <Head>
         <title>xkcd - Comics for developers</title>
         <meta name="description" content="Comics for developers" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Header />
-      <main>
+      <Layout>
         <section className="flex flex-col items-center max-w-lg m-auto">
           <h1 className="mb-2 text-2xl font-bold">{title}</h1>
           <Image src={img} alt={alt} width={width} height={height} />
@@ -51,7 +49,7 @@ export default function Comic({
             )}
           </div>
         </section>
-      </main>
+      </Layout>
     </>
   )
 }
